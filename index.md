@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="">
 <head>
     <title>test</title>
     <meta charset="utf-8">
@@ -10,7 +8,6 @@
     <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
     <div id="main" style="width: 600px;height:400px;"></div>
 </body>
-</html>
 <script type="text/javascript">
     import * as echarts from 'echarts';
     
