@@ -1,37 +1,94 @@
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/beclipsed/beclipsed.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/beclipsed/beclipsed.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <title>test</title>
+    <meta charset="utf-8">
+    <!-- 引入 ECharts 文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.1.2/dist/echarts.min.js"></script>
+</head>
+<body>
+    <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+    <div id="main" style="width: 600px;height:400px;"></div>
+</body>
+</html>
+<script type="text/javascript">
+    import * as echarts from 'echarts';
+    
+    var chartDom = document.getElementById('main');
+    var myChart = echarts.init(chartDom);
+    var option;
+    
+    option = {
+    tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+    type: 'cross',
+    crossStyle: {
+    color: '#999'
+    }
+    }
+    },
+    toolbox: {
+    feature: {
+    dataView: {show: true, readOnly: false},
+    magicType: {show: true, type: ['line', 'bar']},
+    restore: {show: true},
+    saveAsImage: {show: true}
+    }
+    },
+    legend: {
+    data: ['蒸发量', '降水量', '平均温度']
+    },
+    xAxis: [
+    {
+    type: 'category',
+    data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+    axisPointer: {
+    type: 'shadow'
+    }
+    }
+    ],
+    yAxis: [
+    {
+    type: 'value',
+    name: '水量',
+    min: 0,
+    max: 250,
+    interval: 50,
+    axisLabel: {
+    formatter: '{value} ml'
+    }
+    },
+    {
+    type: 'value',
+    name: '温度',
+    min: 0,
+    max: 25,
+    interval: 5,
+    axisLabel: {
+    formatter: '{value} °C'
+    }
+    }
+    ],
+    series: [
+    {
+    name: '蒸发量',
+    type: 'bar',
+    data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
+    },
+    {
+    name: '降水量',
+    type: 'bar',
+    data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
+    },
+    {
+    name: '平均温度',
+    type: 'line',
+    yAxisIndex: 1,
+    data: [2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2]
+    }
+    ]
+    };
+    
+    option && myChart.setOption(option);
+</script>
