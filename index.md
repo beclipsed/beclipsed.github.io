@@ -2,7 +2,7 @@
     <title>test</title>
     <meta charset="utf-8">
     <!-- 引入 ECharts 文件 -->
-    <script src="https://cdn.jsdelivr.net/npm/echarts@5.1.2/dist/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.1.2/dist/echarts.min.js" type="module"></script>
 </head>
 <body>
     <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
