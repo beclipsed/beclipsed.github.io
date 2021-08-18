@@ -21,7 +21,7 @@ option = {
         }
     },
     legend: {
-        data: ['薪资', '涨幅']
+        data: ['存款', '涨幅']
     },
     xAxis: [
         {
@@ -35,7 +35,7 @@ option = {
     yAxis: [
         {
             type: 'value',
-            name: '薪资',
+            name: '存款',
             min: 0,
             max: 120,
             axisLabel: {
@@ -54,7 +54,7 @@ option = {
     ],
     series: [
         {
-            name: '薪资',
+            name: '存款',
             type: 'line',
             data: [33.11, 35.67, 44.04, 58.36, 64.93, 65.29, 73.86, 75.19]
         }, {
